@@ -253,17 +253,12 @@ WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8
   end
 
   def winner
-    if combo = won?
-      @board[combo[0]]
-    if @board[self.won?[0]] == "X"
-      "X"
-    elsif @board[self.won?[0]] == "O"
-      "O"
+    if won?
+      @board[won?[0]] 
     else
       nil
     end
   end
-
   def play
     self.turn while !self.over?
     if self.won?
